@@ -17,3 +17,6 @@
 `[Longitude]`  
 `[Opening Time]`  
 `[Closing Time]`  
+
+# Building sass with sass gem
+`sass -w sass:css`
