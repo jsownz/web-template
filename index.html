@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="theme-color" content="[Theme Color]">
+  <title>[Site Name] | [Tag Line]</title>
+  <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <link rel="manifest" href="manifest.json">
+
+  <link rel="canonical" href="[Site URL]"/>
+
+  <meta name="description" content="[Description]">
+  <meta name="keywords" content="[Keywords]">
+
+  <meta property="og:url" content="[Site URL]" />
+  <meta property="og:site_name" content="[Site Name]" />
+  <meta property="og:title" content="[Site Name] | [Tag Line]" />
+  <meta property="og:image" content="[Meta Image]" />
+  <meta property="og:description" content="[Description]" />
+  <meta property="og:type" content="website" />
+
+  <meta name="twitter:title" content="[Site Name] | [Tag Line]">
+  <meta name="twitter:image" content="[Meta Image]">
+  <meta name="twitter:description" content="[Description]">
+  <meta name="twitter:site" content="[Site URL]">
+
+  <META HTTP-EQUIV="CACHE-CONTROL" CONTENT="public">
+  <link rel="stylesheet" href="/css/main.css"> 
+</head>
+<body id="body">
+  
+  <header></header>
+
+  <div id="content"></div>
+
+  <footer></footer>
+
+  <script>
+    (function() {
+      // if (window.innerWidth > 768) {
+      //   var headerHeight = document.getElementById("header").clientHeight,
+      //       footerHeight = document.getElementById("footer").clientHeight,
+      //       newContentHeight = window.innerHeight - (headerHeight + footerHeight);
+        
+      //   document.getElementById("content").setAttribute("style", "min-height: "+newContentHeight+"px;");
+      // }
+    })();
+
+    function loadCSS( href, before, media ){
+      "use strict";
+      var ss = window.document.createElement( "link" );
+      var ref = before || window.document.getElementsByTagName( "script" )[ 0 ];
+      var sheets = window.document.styleSheets;
+      ss.rel = "stylesheet";
+      ss.href = href;
+      ss.media = "only x";
+      ref.parentNode.insertBefore( ss, ref );
+      function toggleMedia(){
+        var defined;
+        for( var i = 0; i < sheets.length; i++ ){
+          if( sheets[ i ].href && sheets[ i ].href.indexOf( href ) > -1 ){
+            defined = true;
+          }
+        }
+        if( defined ){
+          ss.media = media || "all";
+        }
+        else {
+          setTimeout( toggleMedia );
+        }
+      }
+      toggleMedia();
+      return ss;
+    }
+
+    // load google fonts here
+    // loadCSS("https://fonts.googleapis.com/css?family=Permanent+Marker");
+    // loadCSS("https://fonts.googleapis.com/css?family=Patua+One");
+  </script>
+
+  <!-- Need to add GA -->
+
+  <script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "LocalBusiness",
+    "image": "[Meta Image]",
+    "logo": "[Meta Image]",
+    "@id": "[Site URL]",
+    "name": "[Site Name]",
+    "contactPoint": [
+      { "@type": "ContactPoint",
+        "telephone": "[Meta Phone]",
+        "contactType": "customer support"
+      }
+    ],
+    "areaServed": "US",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "[Street Address]",
+      "addressLocality": "[City]",
+      "addressRegion": "[State]",
+      "postalCode": "[Zipcode]",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": [Latitude],
+      "longitude": [Longitude]
+    },
+    "url": "[Site URL]",
+    "telephone": "[Meta Phone]",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday",
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday",
+          "Sunday"
+        ],
+        "opens": "[Opening Time]",
+        "closes": "[Closing Time]"
+      }
+    ]
+  }
+  </script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      console.log("Will the service worker register?");
+      navigator.serviceWorker.register('service-worker.js')
+      .then(function(reg){
+        console.log("Yes, it did.");
+      }).catch(function(err) {
+        console.log("No it didn't. This happened: ", err)
+      });
+    }
+  </script>
+</body>
+</html>
