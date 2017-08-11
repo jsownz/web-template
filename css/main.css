@@ -1,0 +1,66 @@
+html, body {
+  margin: 0;
+  height: 100vh;
+  width: 100%; }
+
+* {
+  box-sizing: border-box; }
+
+input, select, textarea, button {
+  font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif; }
+
+b, strong {
+  font-weight: 700;
+  letter-spacing: 1.4px; }
+
+.table {
+  display: table;
+  width: 100%; }
+
+.cell {
+  display: table-cell; }
+
+.flex {
+  display: flex; }
+
+.flex-row {
+  flex-direction: row;
+  justify-content: flex-start; }
+
+.flex-col {
+  flex-direction: column;
+  align-items: flex-start; }
+
+.btcf:after {
+  content: "";
+  display: table;
+  clear: both; }
+
+.aL {
+  text-align: left; }
+
+.aC {
+  text-align: center; }
+
+.aR {
+  text-align: right; }
+
+.dIB {
+  display: inline-block; }
+
+.vaT {
+  vertical-align: top; }
+
+.vaM {
+  vertical-align: middle; }
+
+.vaB {
+  vertical-align: bottom; }
+
+.fL {
+  float: left; }
+
+.fR {
+  float: right; }
+
+/*# sourceMappingURL=main.css.map */
